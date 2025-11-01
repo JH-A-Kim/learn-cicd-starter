@@ -6,12 +6,11 @@ import (
 	"testing"
 )
 
-
-func TestGetAPIKey(t *testing.T){
+func TestGetAPIKey(t *testing.T) {
 	tests := []struct {
-		input http.Header
-		want  string
-		wantErr   error
+		input   http.Header
+		want    string
+		wantErr error
 	}{
 		{input: http.Header{"Authorization": {""}}, want: "", wantErr: ErrNoAuthHeaderIncluded},
 		{input: http.Header{"Authorization": {"notAPIkey"}}, want: "", wantErr: err.New("malformed authorization header")},
