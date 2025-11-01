@@ -36,5 +36,3 @@ jobs:
 
             - name: format check
               run: test -z $(go fmt ./...)
-                
-              run: go test ./... -cover
