@@ -1,6 +1,16 @@
 package auth
 
 import (
+	err "errors"
+	"net/http"
+	"testing"
+)
+
+func TestGetAPIKey(t *testing.T) {
+	tests := []struct {
+		input   http.Header
+		want    string
+		wantErr error
 	"testing"
 	"net/http"
 	err "errors"
@@ -30,4 +40,5 @@ func TestGetAPIKey(t *testing.T){
 			t.Errorf("expected %q, got %q", tc.want, got)
 		}
 	}
+}
 }
