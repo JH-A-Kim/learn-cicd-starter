@@ -11,6 +11,16 @@ func TestGetAPIKey(t *testing.T) {
 		input   http.Header
 		want    string
 		wantErr error
+	"testing"
+	"net/http"
+	err "errors"
+)
+
+func TestGetAPIKey(t *testing.T){
+	tests := []struct {
+		input http.Header
+		want  string
+		wantErr   error
 	}{
 		{input: http.Header{"Authorization": {""}}, want: "", wantErr: ErrNoAuthHeaderIncluded},
 		{input: http.Header{"Authorization": {"notAPIkey"}}, want: "", wantErr: err.New("malformed authorization header")},
@@ -30,4 +40,5 @@ func TestGetAPIKey(t *testing.T) {
 			t.Errorf("expected %q, got %q", tc.want, got)
 		}
 	}
+}
 }
