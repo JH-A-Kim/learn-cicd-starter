@@ -42,7 +42,7 @@ jobs:
               run: staticcheck ./...
 
     Security:
-        name: Security
+        name: gosec
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Code
